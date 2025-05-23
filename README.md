@@ -16,7 +16,7 @@ This extension contributes the following settings:
 
 * `elara.font`: The font to use for the HTML output. Prefix `gf:` to use Google Fonts.
 
-* `elara.code_font`: The code font to use for the HTML output. Prefix `gf:` to use Google Fonts.
+* `elara.codeFont`: The code font to use for the HTML output. Prefix `gf:` to use Google Fonts.
 
 ## Limitations
 
