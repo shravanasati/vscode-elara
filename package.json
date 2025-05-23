@@ -47,7 +47,7 @@
           "default": "sans-serif",
           "description": "The font to use for the HTML output. Prefix `gf:` to use Google Fonts."
         },
-        "elara.code_font": {
+        "elara.codeFont": {
           "type": "string",
           "default": "monospace",
           "description": "The code font to use for the HTML output. Prefix `gf:` to use Google Fonts.",
