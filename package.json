@@ -33,6 +33,27 @@
           "group": "navigation"
         }
       ]
+    },
+    "configuration": {
+      "title": "Elara",
+      "properties": {
+        "elara.theme": {
+          "type": "string",
+          "default": "vs",
+          "description": "The theme to use for the HTML output. Use elara list-themes to see all available themes. Can also be a path to a custom VSCode JSON theme file."
+        },
+        "elara.font": {
+          "type": "string",
+          "default": "sans-serif",
+          "description": "The font to use for the HTML output. Prefix `gf:` to use Google Fonts."
+        },
+        "elara.code_font": {
+          "type": "string",
+          "default": "monospace",
+          "description": "The code font to use for the HTML output. Prefix `gf:` to use Google Fonts.",
+          "title": "Code Font"
+        }
+      }
     }
   },
   "scripts": {

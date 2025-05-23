@@ -12,6 +12,11 @@ export function activate(context: vscode.ExtensionContext) {
 	// This line of code will only be executed once when your extension is activated
 	console.log('Congratulations, your extension "elara" is now active!');
 
+	const config = vscode.workspace.getConfiguration('elara');
+	const elaraTheme = config.get<string>('theme');
+	const elaraFont = config.get<string>('font');
+	const elaraCodeFont = config.get<string>('codeFont');
+
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
@@ -34,15 +39,18 @@ export function activate(context: vscode.ExtensionContext) {
 			cancellable: false
 		}, async (progress) => {
 			return new Promise<void>((resolve, reject) => {
-				exec(`elara convert --silent ${filePath}`, (error, stdout, stderr) => {
+				const themeArg = elaraTheme ? `--theme ${elaraTheme}` : '';
+				const fontArg = elaraFont ? `--font ${elaraFont}` : '';
+				const codeFontArg = elaraCodeFont ? `--code-font ${elaraCodeFont}` : '';
+				exec(`elara convert --silent ${filePath} ${themeArg} ${fontArg} ${codeFontArg}`, (error, stdout, stderr) => {
 					if (error) {
 						progress.report({ message: `Conversion failed: ${error.message}` });
-						setTimeout(() => resolve(), 2000);
+						setTimeout(() => reject(), 2000);
 						return;
 					}
 					if (stderr) {
 						progress.report({ message: `Conversion failed: ${stderr}` });
-						setTimeout(() => resolve(), 2000);
+						setTimeout(() => reject(), 2000);
 						return;
 					}
 					progress.report({ message: `Conversion successful! Opening file...` });
