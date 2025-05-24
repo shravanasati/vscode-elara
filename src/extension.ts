@@ -54,9 +54,9 @@ export function activate(context: vscode.ExtensionContext) {
 
 		vscode.window.showInformationMessage("Converting Jupyter Notebook to HTML...");
 
-		const themeArg = elaraTheme ? `--theme ${elaraTheme}` : '';
-		const fontArg = elaraFont ? `--font ${elaraFont}` : '';
-		const codeFontArg = elaraCodeFont ? `--code-font ${elaraCodeFont}` : '';
+		const themeArg = elaraTheme ? `--theme "${elaraTheme}"` : '';
+		const fontArg = elaraFont ? `--font "${elaraFont}"` : '';
+		const codeFontArg = elaraCodeFont ? `--code-font "${elaraCodeFont}"` : '';
 		const convertCommand = `elara convert --silent ${filePath} ${themeArg} ${fontArg} ${codeFontArg}`;
 		console.log(`Executing command: ${convertCommand}`);
 
