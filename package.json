@@ -4,7 +4,7 @@
   "publisher": "shravanasati",
   "description": "Elara: Convert Jupyter notebooks into *pretty* HTML documents.",
   "icon": "images/icon.png",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/shravanasati/vscode-elara"
