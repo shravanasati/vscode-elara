@@ -1,8 +1,8 @@
 {
   "name": "elara",
-  "displayName": "elara: Convert Jupyter Notebooks to HTML",
+  "displayName": "elara",
   "publisher": "shravanasati",
-  "description": "Elara: Convert Jupyter notebooks into *pretty* HTML documents.",
+  "description": "Convert Jupyter notebooks into *pretty* HTML documents.",
   "icon": "images/icon.png",
   "version": "0.1.1",
   "repository": {
