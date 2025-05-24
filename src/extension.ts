@@ -46,13 +46,14 @@ export function activate(context: vscode.ExtensionContext) {
 			return;
 		}
 
+		vscode.window.showInformationMessage("Converting Jupyter Notebook to HTML...");
+
 		const isInstalled = await checkElaraInstalled();
 		if (!isInstalled) {
 			vscode.window.showErrorMessage('Elara is not installed or not found in the PATH.');
 			return;
 		}
 
-		vscode.window.showInformationMessage("Converting Jupyter Notebook to HTML...");
 
 		const themeArg = elaraTheme ? `--theme "${elaraTheme}"` : '';
 		const fontArg = elaraFont ? `--font "${elaraFont}"` : '';
